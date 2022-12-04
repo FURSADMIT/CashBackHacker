@@ -1,10 +1,8 @@
 package ru.netology.service;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 import ru.netology.service.CashbackHackService;
-
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertThrows;
+import org.junit.Assert;
 
 public class CashbackHackServiceTest {
 
@@ -12,7 +10,7 @@ public class CashbackHackServiceTest {
     public void amount1900Test() {
         var value = new CashbackHackService();
 
-        assertEquals(value.remain(1999), 1);
+        Assert.assertEquals(value.remain(1999), 1);
 
     }
 
@@ -20,7 +18,7 @@ public class CashbackHackServiceTest {
     public void amount1Test() {
         var value = new CashbackHackService();
 
-        assertEquals(value.remain(1), 999);
+        Assert.assertEquals(value.remain(1), 999);
 
     }
 
@@ -28,7 +26,7 @@ public class CashbackHackServiceTest {
     public void amountZeroTest() {
         var value = new CashbackHackService();
 
-        assertEquals(value.remain(0), 1000);
+        Assert.assertEquals(value.remain(0), 1000);
 
     }
 
@@ -36,7 +34,7 @@ public class CashbackHackServiceTest {
     public void amountMinus1Test() {
         var value = new CashbackHackService();
 
-        assertEquals(value.remain(-1), 1001);
+        Assert.assertEquals(value.remain(-1), 1001);
 
     }
 
@@ -44,8 +42,7 @@ public class CashbackHackServiceTest {
     public void amount1000Test() {
         var value = new CashbackHackService();
 
-        assertEquals(value.remain(1000), 0);
+        Assert.assertEquals(value.remain(1000), 0);
 
     }
-
 }
